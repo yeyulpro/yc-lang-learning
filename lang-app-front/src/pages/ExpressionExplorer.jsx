@@ -2,9 +2,11 @@
 import React from "react";
 import ExpressionInput from "@/components/ExpressionExplorer/ExpressionInput.jsx";
 import VoiceInput from "@/components/ExpressionExplorer/VoiceInput.jsx";
+import AIChat from "@/components/ExpressionExplorer/AIChat.jsx";
+
 const ExpressionExplorer = () => {
   return (
-    <div className="flex w-full flex-col pb-2">
+    <div className="flex w-full min-h-0 flex-1 flex-col pb-2">
       <header className="mb-6 flex items-center gap-3">
         <div
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-cyan-500 via-cyan-500 to-fuchsia-600 shadow-lg shadow-cyan-500/35 ring-1 ring-white/35 dark:shadow-[0_0_28px_rgba(34,211,238,0.25),0_0_40px_rgba(168,85,247,0.12)] dark:ring-white/15"
@@ -36,7 +38,7 @@ const ExpressionExplorer = () => {
           </p>
         </div>
       </header>
-      <div className="flex flex-col gap-4 md:gap-6 lg:flex-row lg:items-start lg:gap-8">
+      <div className="flex min-h-0 flex-1 flex-col gap-4 md:gap-6 lg:flex-row lg:items-stretch lg:gap-8">
         {/* LEFT COLUMN - 40% width on desktop, full width on mobile */}
         <div className="flex w-full shrink-0 flex-col gap-4 md:gap-6 lg:w-[40%]">
           {/* Top Half */}
@@ -54,20 +56,20 @@ const ExpressionExplorer = () => {
         </div>
 
         {/* RIGHT COLUMN - 60% width on desktop, full width on mobile */}
-        <div className="flex w-full min-w-0 flex-col lg:min-h-112 lg:w-[60%] lg:flex-1">
+        <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col lg:w-[60%] lg:flex-none">
           <div className="glass-card flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl p-4 shadow-sm ring-1 ring-black/4 md:p-6 dark:ring-white/6">
-            <div className="flex min-h-0 flex-1 flex-col overflow-auto">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700/90 dark:text-cyan-400/80">
+            <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
+              <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700/90 dark:text-cyan-400/80">
                 AI companion
               </p>
-              <h2 className="mt-1 text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+              <h2 className="mt-1 shrink-0 text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
                 Insights
               </h2>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+              <p className="mt-2 shrink-0 text-sm text-slate-600 dark:text-slate-400">
                 AI summaries and examples will appear here.
               </p>
-              <div className="glass-panel mt-6 flex flex-1 items-center justify-center rounded-xl border border-dashed border-cyan-500/25 px-4 py-12 text-center text-sm text-slate-500 dark:border-white/12 dark:text-slate-500">
-                Select or enter an expression to get started.
+              <div className="glass-panel mt-6 flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden rounded-xl border border-dashed border-cyan-500/25 text-slate-500 dark:border-white/12 dark:text-slate-500">
+                <AIChat />
               </div>
             </div>
           </div>
