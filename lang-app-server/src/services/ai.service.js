@@ -1,6 +1,7 @@
 
 
 import client from "../config/ai.js";
+
 import { expressionSystemPrompt } from "../prompts/expression.prompt.js";
 
 export const analyzeExpressionWithAI = async ({
@@ -28,11 +29,11 @@ Input Type: "${inputType}"
   };
 
 
-analyzeExpressionWithAI({
-  originalText: "I won't be a sucker.",
-  targetLanguage: "English",
-  explainLanguage: "Korean",
-});
+// analyzeExpressionWithAI({
+//   originalText: "I won't be a sucker.",
+//   targetLanguage: "English",
+//   explainLanguage: "Korean",
+// });
 
 
 
