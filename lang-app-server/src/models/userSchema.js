@@ -24,6 +24,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       minlength: 6,
     },
+    
 
     profileImage: {
       type: String,
@@ -42,25 +43,14 @@ const userSchema = new mongoose.Schema(
       default: [],
     },
 
-    dailyGoal: {
-      type: Number,
-      default: 5,
-    },
 
-    streak: {
-      type: Number,
-      default: 0,
-    },
 
     totalExpressionsSaved: {
       type: Number,
       default: 0,
     },
 
-    isPremium: {
-      type: Boolean,
-      default: false,
-    },
+  
   },
   { timestamps: true },
 );
