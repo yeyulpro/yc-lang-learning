@@ -10,7 +10,7 @@ export default function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 1000);
+   
   };
 
   return (
