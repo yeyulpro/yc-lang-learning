@@ -1,18 +1,16 @@
-
-
 import client from "../config/ai.js";
 
 import { expressionSystemPrompt } from "../prompts/expression.prompt.js";
 
 export const analyzeExpressionWithAI = async ({
-    originalText,
-    targetLanguage,
-    explainLanguage,
-    inputType = "text",
-  }) => {
-    const response = await client.responses.create({
-        model: "gpt-5.5",
-        input: `
+  originalText,
+  targetLanguage,
+  explainLanguage,
+  inputType = "text",
+}) => {
+  const response = await client.responses.create({
+    model: "gpt-5.5",
+    input: `
 ${expressionSystemPrompt}
 
 Expression: "${originalText}"
@@ -23,19 +21,19 @@ Explain Language: "${explainLanguage}"
 
 Input Type: "${inputType}"
 `,
-    });
-    console.log(response.output_text);
-    return response.output_text;
-  };
-
+  });
+  console.log(response.output_text);
+ //convert the response.output_text to a js object
+  console.log('converted to js object:',JSON.parse( response.output_text));
+  const expressionResult=JSON.parse( response.output_text);
+  return expressionResult;
+};
 
 // analyzeExpressionWithAI({
 //   originalText: "I won't be a sucker.",
 //   targetLanguage: "English",
 //   explainLanguage: "Korean",
 // });
-
-
 
 //=============other api test=============
 //communicating with the AI model
